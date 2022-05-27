@@ -1,0 +1,42 @@
+﻿<Window x:Class="Hotel.View.EditReservation"   Icon="\Logo.png"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hotel.View"
+         xmlns:ViewModel="clr-namespace:Hotel.ViewModel"
+        mc:Ignorable="d"
+        x:Name="EditReservationsWnd"
+        Title="Изменить резервирование" Height="450" Width="300" Background="#379683">
+    <Window.DataContext>
+        <ViewModel:EditReresravationVM/>
+    </Window.DataContext>
+    <Grid>
+       
+        <StackPanel Grid.Column="1">
+            <TextBlock Text="Дата всления" Height="20" FontFamily="Times new Roman" FontSize="20"/>
+
+            <DatePicker Name="DatePickerCheckInDate" IsDropDownOpen="True" SelectedDateFormat="Short"  SelectedDate="{Binding ResCheckInDate }"/>
+
+            <TextBlock Text="Дата выселения" Height="20" FontFamily="Times new Roman" FontSize="20"/>
+
+            <DatePicker Name="DatePickerCheckOutDate" IsDropDownOpen="True" SelectedDateFormat="Short" SelectedDate="{Binding ResCheckOutDate }"/>
+
+            <TextBlock Text="Комната" Height="21" FontFamily="Times new Roman" FontSize="20"/>
+            <ComboBox Name="ComboBoxRoomIDText" ItemsSource="{Binding AllRooms}" SelectedItem="{Binding ResRoom}" DisplayMemberPath="Number" Style="{StaticResource WorkWindowComboBox}"/>
+
+            <TextBlock Text="Статус резервирования" Height="22" FontFamily="Times new Roman" FontSize="20"/>
+            <ComboBox Name="ComboBoxReservationStatusText" Text="{Binding ResReservationStatus}" Style="{StaticResource WorkWindowComboBox}"   >
+                <TextBlock Text="Reservation" />
+            </ComboBox>
+            <TextBlock Text="Тип оплаты" Height="21" FontFamily="Times new Roman" FontSize="20"/>
+            <ComboBox Name="ComboBoxTypePaymentText"  Text="{Binding RestypePayment }" Style="{StaticResource WorkWindowComboBox}">
+                <TextBlock Text="bank card"/>
+                <TextBlock Text="in cash"/>
+            </ComboBox>
+            <TextBlock Text="Клиент" Height="22" FontFamily="Times new Roman" FontSize="20"/>
+            <ComboBox Name="ComboBoxClientIDText"  ItemsSource="{Binding AllClient}" SelectedItem="{Binding ResClient}" DisplayMemberPath="FirstName" Style="{StaticResource WorkWindowComboBox}"/>
+            <Button  Margin="13" Content="Сохранить" Height="43" Command="{Binding EditReservation}" CommandParameter="{Binding ElementName=EditReservationsWnd}" Style="{StaticResource StartWindosButtonsAlt}" FontSize="30" FontFamily="Times new Roman"/>
+        </StackPanel>
+    </Grid>
+</Window>

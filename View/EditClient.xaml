@@ -1,0 +1,42 @@
+﻿<Window x:Class="Hotel.View.EditClient"   Icon="\Logo.png"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hotel.View"
+        xmlns:ViewModel="clr-namespace:Hotel.ViewModel"
+        x:Name="EditClients"
+        mc:Ignorable="d"
+        Title="Изменить клиента" Height="450" Width="300" Background="#379683">
+    <Window.DataContext>
+        <ViewModel:EditClientVM/>
+    </Window.DataContext>
+    <Grid>
+      
+        <StackPanel Grid.Column="1">
+            <TextBlock Text="Имя" FontFamily="Times new Roman" FontSize="20"/>
+            <TextBox Name="FirstNameText" Text="{Binding CliFirstName}" Style="{StaticResource AutorizationTextBox}"/>
+
+            <TextBlock Text="Фамилия" FontFamily="Times new Roman" FontSize="20"/>
+            <TextBox Name="LastNameText" Text="{Binding CliLastName}" Style="{StaticResource AutorizationTextBox}"/>
+
+
+            <TextBlock Text="Паспорт" FontFamily="Times new Roman" FontSize="20"/>
+            <TextBox Name="PassportText" Text="{Binding CliPassport}" Style="{StaticResource AutorizationTextBox}" />
+
+            <TextBlock Text="Дата рождения" FontFamily="Times new Roman" FontSize="20"/>
+            <DatePicker Name="DatePickerDateOfBrith" IsDropDownOpen="True" SelectedDateFormat="Short" SelectedDate="{Binding CliDateOfBrith}"/>
+
+            <TextBlock Text="Гендер" FontFamily="Times new Roman" FontSize="20"/>
+            <ComboBox Name="ComboBoxGender" Text="{Binding CliGender}" Style="{StaticResource WorkWindowComboBox}">
+                <TextBlock Text="Муж."/>
+                <TextBlock Text="Жен."/>
+            </ComboBox>
+
+            <TextBlock Text="Номер телефона" FontFamily="Times new Roman" FontSize="20"/>
+            <TextBox Name="PhoneNumberText" Text="{Binding CliPhoneNumber}" Style="{StaticResource AutorizationTextBox}"/>
+
+            <Button  Margin="13" Content="Сохранить" FontSize="30" Command="{Binding EditClient}" CommandParameter="{Binding ElementName=EditClients}" Style="{StaticResource StartWindosButtonsAlt}" FontFamily="Times new Roman" />
+        </StackPanel>
+    </Grid>
+</Window>

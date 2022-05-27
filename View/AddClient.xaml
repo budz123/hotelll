@@ -1,0 +1,46 @@
+﻿<Window x:Class="Hotel.View.AddClient"
+         Icon="\Logo.png"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hotel.View"
+        xmlns:ViewModel="clr-namespace:Hotel.ViewModel"
+        mc:Ignorable="d"
+        x:Name="AddClietnsWnd"
+        Title="Добавить клиента" Height="450" Width="300" Background="#116466" >
+    <Window.DataContext>
+        <ViewModel:AddClientVM/>
+    </Window.DataContext>
+    <Grid>
+
+
+        <StackPanel >
+            <TextBlock Text="Имя" FontFamily="Times new Roman" FontSize="20"/>
+            <TextBox x:Name="FirstNameText" Text="{Binding CliFirstName}" Style="{StaticResource AutorizationTextBox}" />
+
+            <TextBlock FontSize="20" Text="Фамилия"  FontFamily="Times new Roman"/>
+            <TextBox x:Name="LastNameText" Text="{Binding CliLastName}" Style="{StaticResource AutorizationTextBox}"/>
+
+
+            <TextBlock FontSize="20" Text="Паспорт"  FontFamily="Times new Roman"/>
+            <TextBox x:Name="PassportText" Text="{Binding CliPassport}" Style="{StaticResource AutorizationTextBox}"/>
+
+            <TextBlock  FontSize="20" Text="Дата рождения"  FontFamily="Times new Roman"/>
+            <DatePicker x:Name="DatePickerDateOfBrith" IsDropDownOpen="True" SelectedDateFormat="Short" SelectedDate="{Binding CliDateOfBrith}"  />
+
+            <TextBlock  FontSize="20" Text="Гендер"  FontFamily="Times new Roman"/>
+            <ComboBox x:Name="ComboBoxGender" Text="{Binding CliGender}" Style="{StaticResource WorkWindowComboBox}">
+                <TextBlock Text="Муж."/>
+                <TextBlock Text="Жен."/>
+                <TextBlock Text="Гей"/>
+                <TextBlock Text="Атакующий вертолёт"/>
+                <TextBlock Text="Panzerfagen ufg.10"/>
+            </ComboBox>
+
+            <TextBlock  FontSize="20" Text="Номер телефона"  FontFamily="Times new Roman"/>
+            <TextBox x:Name="PhoneNumberText" Text="{Binding CliPhoneNumber}"   Style="{StaticResource AutorizationTextBox}"/>
+            <Button Content="Сохранить" FontSize="30" Command="{Binding AddNewClient}" CommandParameter="{Binding ElementName=AddClietnsWnd}" Style="{StaticResource StartWindosButtonsAlt}"  FontFamily="Times new Roman" Margin="13"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="View\AddNewDepartmentWindow - Копировать %282%29 - Копировать.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>AddNewDepartmentWindow - Копировать (2).xaml.cs</DependentUpon>
+    </Compile>
+    <Compile Update="View\AddNewDepartmentWindow - Копировать %282%29.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>AddNewDepartmentWindow.xaml.cs</DependentUpon>
+    </Compile>
+    <Compile Update="View\AddNewDepartmentWindow - Копировать %283%29.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>AddNewDepartmentWindow.xaml.cs</DependentUpon>
+    </Compile>
+    <Compile Update="View\AddNewDepartmentWindow - Копировать - Копировать %282%29.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>AddNewDepartmentWindow - Копировать.xaml.cs</DependentUpon>
+    </Compile>
+    <Compile Update="View\AddNewDepartmentWindow - Копировать - Копировать - Копировать.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>AddNewDepartmentWindow - Копировать - Копировать.xaml.cs</DependentUpon>
+    </Compile>
+    <Compile Update="View\AddNewDepartmentWindow - Копировать - Копировать.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>AddNewDepartmentWindow - Копировать.xaml.cs</DependentUpon>
+    </Compile>
+    <Compile Update="View\AddNewDepartmentWindow - Копировать.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>AddNewDepartmentWindow.xaml.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

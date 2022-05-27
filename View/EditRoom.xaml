@@ -1,0 +1,57 @@
+﻿<Window x:Class="Hotel.View.EditRoom"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"   Icon="\Logo.png"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hotel.View"
+         xmlns:ViewModel="clr-namespace:Hotel.ViewModel"
+        x:Name="EditRoomWnd"
+        mc:Ignorable="d"
+        Title="Изменить комнату" Height="450" Width="300" Background="#379683">
+    <Window.DataContext>
+        <ViewModel:EditRoomVM/>
+    </Window.DataContext>
+    <Grid>
+       
+        <StackPanel Grid.Column="1">
+
+            <TextBlock Text="Номер комнаты" Height="22" Width="136" FontFamily="Times new Roman" FontSize="20"/>
+            <TextBox Name="NumberText" Style="{StaticResource AutorizationTextBox}" Text="{Binding RomNumber }"/>
+
+            <TextBlock Text="Этаж" Height="22" Width="47" FontFamily="Times new Roman" FontSize="20"/>
+            <ComboBox x:Name="ComboBoxFloorText" Style="{StaticResource WorkWindowComboBox}" Text="{Binding RomFloor }">
+                <TextBlock Text="1"/>
+                <TextBlock Text="2"/>
+                <TextBlock Text="3"/>
+            </ComboBox>
+
+            <TextBlock Text="Тип комнаты" Height="20" Width="113" FontFamily="Times new Roman" FontSize="20"/>
+            <ComboBox x:Name="ComboBoxTypeText" Style="{StaticResource WorkWindowComboBox}"  Text="{Binding RomType }">
+                <TextBlock Text="Comfort"/>
+                <TextBlock Text="NeComfort"/>
+                <TextBlock Text="VIP"/>
+            </ComboBox>
+
+            <TextBlock Text="Емкость комнаты" Height="21" Width="153" FontFamily="Times new Roman" FontSize="20"/>
+            <ComboBox x:Name="ComboBoxCapfcityText" Style="{StaticResource WorkWindowComboBox}" Text="{Binding RomCapfcity }">
+                <TextBlock Text="1"/>
+                <TextBlock Text="2"/>
+                <TextBlock Text="3"/>
+            </ComboBox>
+
+            <TextBlock Text="Статус комнаты" Height="20" Width="138" FontFamily="Times new Roman" FontSize="20"/>
+            <ComboBox x:Name="ComboBoxStatusText" Style="{StaticResource WorkWindowComboBox}" Text="{Binding RomStatus }">
+                <TextBlock Text="Reservation"/>
+                <TextBlock Text="not booked"/>
+            </ComboBox>
+
+            <TextBlock Text="Цена комнаты" Height="19" Width="127" FontFamily="Times new Roman" FontSize="20"/>
+            <TextBox Name="PriceText" Style="{StaticResource AutorizationTextBox}" Text="{Binding RomPrice }"/>
+
+
+
+
+            <Button  Margin="13" Content="Сохранить" FontSize="30" Style="{StaticResource StartWindosButtonsAlt}" Command="{Binding EditRoom}" CommandParameter="{Binding ElementName=EditRoomWnd}" FontFamily="Times new Roman"/>
+        </StackPanel>
+    </Grid>
+</Window>
