@@ -125,6 +125,11 @@ namespace Hotel.ViewModel
             AddReservation newReservationWindow = new AddReservation();
             SetCenterPositionAndOpen(newReservationWindow);
         }
+        private void OpenVhodWindowMethod()
+        {
+            VhodWindow newVhodWindow = new VhodWindow();
+            SetCenterPositionAndOpen(newVhodWindow);
+        }
         //окна редактирования
         private void OpenEditReservationWindowMethod(Reservation Reservation)
         {

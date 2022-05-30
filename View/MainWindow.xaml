@@ -145,8 +145,10 @@
                           
                         </Button>
                         <Button Content="Новая Комната" Command="{Binding OpenAddNewRoomnWnd}" Style="{StaticResource StartWindosButtonsAlt}" Margin="10,150,10,120" Grid.Column="1" FontFamily="Times new Roman" Height="63" />
+                
                 <Button Content="Новое Резервирование" Command="{Binding OpenAddNewReservationWnd}" Style="{StaticResource StartWindosButtonsAlt}" Margin="10,-100,10,40" Grid.Column="1" FontFamily="Times new Roman"/>
-            </StackPanel>
+                        <Button Margin="20" Height="10" Command="{Binding OpenVhodWindowMethod}"/>
+                    </StackPanel>
         </Border>
     </Grid>
         </Grid>
